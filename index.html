@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Define la codificación de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Asegura que la página se escale correctamente en dispositivos móviles -->
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // Solicita al usuario el primer valor y lo convierte a número decimal
+        let value1 = parseFloat(prompt("Ingrese un valor"));
+
+        // Solicita al usuario el segundo valor y lo convierte a número decimal
+        let value2 = parseFloat(prompt("Ingrese otro valor"));
+
+        // Variable donde se guardará el resultado de las operaciones
+        let resultado;
+
+        // Verifica si alguno de los valores ingresados no es un número válido
+        
+        if (isNaN(value1) || isNaN(value2)) {
+            document.write(`<p>Los valores deben ser números</p>`);
+        } else {
+            document.write(`<p>El valor de la variable 1 es ${value1}</p>`);
+            document.write(`<p>El valor de la variable 2 es ${value2}</p>`);
+
+            for (let i = 0; i < 5; i++) {
+                // 
+                switch (i) {
+                    case 0:
+                        // Se hace la suma y se muestra el resultado
+                        resultado = value1 + value2;
+                        document.write(`<p>El resultado de la suma es ${resultado}</p>`);
+                        break;
+                    case 1:
+                        // Se hace la resta y se muestra el resultado
+                        resultado = value1 - value2;
+                        document.write(`<p>El resultado de la resta es ${resultado}</p>`);
+                        break;
+                    case 2:
+                        // Se hace la multiplicación y se muestra el resultado
+                        resultado = value1 * value2;
+                        document.write(`<p>El resultado de la multiplicación es ${resultado}</p>`);
+                        break;
+                    case 3:
+                        // División (verifica que el divisor no sea cero)
+                        if (value2 !== 0) {
+                            // Se hace la división y se muestra el resultado
+                            resultado = value1 / value2;
+                            document.write(`<p>El resultado de la división es ${resultado}</p>`);
+                        } else {
+                            // Se muestra un mensaje de error si el divisor es cero
+                            document.write(`<p>No se puede dividir entre cero</p>`);
+                        }
+                        break;
+                    case 4:
+                        // Módulo o residuo de la división
+                        if (value2 !== 0) {
+                            // Se hace el módulo y se muestra el resultado
+                            resultado = value1 % value2;
+                            document.write(`<p>El residuo de la división es ${resultado}</p>`);
+                        } else {
+                            // Se muestra un mensaje de error si el divisor es cero
+                            document.write(`<p>No se puede calcular el residuo con divisor cero</p>`);
+                        }
+                        break;
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
